@@ -31,16 +31,16 @@ public class TransaksiController{
     }
 
     public void addTransaksi(@RequestBody Transaksi transaksi, @RequestBody User user, @RequestBody Rental rental ,@PathVariable Long idDriver, @PathVariable Long idMobil, @PathVariable Long idPenyewa){
+        transaksi.setPenyewa(new Penyewa(idPenyewa, "", "", "", "", user));
         transaksi.setDriver(new Driver(idDriver, "", "", "", "", "", user));
         transaksi.setMobil(new Mobil(idMobil, "", "", "", "", "", "", rental));
-        transaksi.setPenyewa(new Penyewa(idPenyewa, "", "", "", "", user));
         transaksiService.addTransaksi(transaksi);
     }
 
     public void updateTransaksi(@RequestBody Transaksi transaksi, @RequestBody User user, @RequestBody Rental rental ,@PathVariable Long idDriver, @PathVariable Long idMobil, @PathVariable Long idPenyewa, @PathVariable Long idTransaksi){
+        transaksi.setPenyewa(new Penyewa(idPenyewa, "", "", "", "", user));
         transaksi.setDriver(new Driver(idDriver, "", "", "", "", "", user));
         transaksi.setMobil(new Mobil(idMobil, "", "", "", "", "", "", rental));
-        transaksi.setPenyewa(new Penyewa(idPenyewa, "", "", "", "", user));
         transaksiService.updateTransaksi(transaksi);
     }
 
