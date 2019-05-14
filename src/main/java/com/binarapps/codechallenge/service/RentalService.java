@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class RentalService {
 
     @Autowired
-    private RentalRepository rentalRepository;
+    RentalRepository rentalRepository;
 
     public List<Rental> getAllRental(Long idUser){
         List<Rental> rentals = new ArrayList<>();

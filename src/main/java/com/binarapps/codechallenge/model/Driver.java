@@ -16,11 +16,11 @@ public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id_driver")
-    private Long id;
+    private Long idDriver;
 
     @OneToOne
     @MapsId
-    private User User;
+    private User user;
 
     @Column(name = "no_sim")
     private String sim;
@@ -41,42 +41,43 @@ public class Driver {
 
     }
 
-    public Driver(Long id, String sim, String ktp, String nama, String alamat ,String telepon){
+    public Driver(Long idDriver, String sim, String ktp, String nama, String alamat ,String telepon, User user){
         super();
-        this.id = id;
+        this.idDriver = idDriver;
         this.sim = sim;
         this.ktp = ktp;
         this.nama = nama;
         this.alamat = alamat;
         this.telepon = telepon;
+        this.user = user;
     }
 
     /**
-     * @return the id
+     * @return the idDriver
      */
-    public Long getId() {
-        return id;
+    public Long getIdDriver() {
+        return idDriver;
     }
 
     /**
-     * @param id the id to set
+     * @param idDriver the idDriver to set
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdDriver(Long idDriver) {
+        this.idDriver = idDriver;
     }
 
     /**
      * @return the user
      */
     public User getUser() {
-        return User;
+        return user;
     }
 
     /**
      * @param user the user to set
      */
     public void setUser(User user) {
-        User = user;
+        this.user = user;
     }
 
     /**
@@ -148,4 +149,7 @@ public class Driver {
     public void setTelepon(String telepon) {
         this.telepon = telepon;
     }
+
+    
+    
 }

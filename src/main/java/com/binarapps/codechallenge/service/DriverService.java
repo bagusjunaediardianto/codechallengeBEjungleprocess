@@ -14,9 +14,9 @@ import org.springframework.stereotype.Service;
 public class DriverService {
 
     @Autowired
-    private DriverRepository driverRepository;
+    DriverRepository driverRepository;
 
-    public List<Driver> getAllDrivers(Long idUser){
+    public List<Driver> getAllDriver(Long idUser){
         List<Driver> drivers = new ArrayList<>();
         driverRepository.findByUserId(idUser)
         .forEach(drivers::add);

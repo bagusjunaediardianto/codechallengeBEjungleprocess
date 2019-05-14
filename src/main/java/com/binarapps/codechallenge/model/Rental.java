@@ -17,7 +17,7 @@ public class Rental {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_rental")
-    private Long id;
+    private Long idRental;
 
     @OneToOne
     @MapsId
@@ -39,26 +39,28 @@ public class Rental {
 
     }
 
-    public Rental(Long id, String npwp, String nama, String alamat, String telepon){
+    public Rental(Long idRental, String npwp, String nama, String alamat, String telepon, User user){
         super();
+        this.idRental = idRental;
         this.npwp = npwp;
         this.nama = nama;
         this.alamat = alamat;
         this.telepon = telepon;
+        this.user = user;
     }
 
     /**
-     * @return the id
+     * @return the idRental
      */
-    public Long getId() {
-        return id;
+    public Long getIdRental() {
+        return idRental;
     }
 
     /**
-     * @param id the id to set
+     * @param idRental the idRental to set
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdRental(Long idRental) {
+        this.idRental = idRental;
     }
 
     /**
@@ -130,5 +132,4 @@ public class Rental {
     public void setTelepon(String telepon) {
         this.telepon = telepon;
     }
-    
 }

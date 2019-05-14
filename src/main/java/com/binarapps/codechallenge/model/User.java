@@ -16,7 +16,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id_user")
-    private Long id;
+    private Long idUser;
 
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Driver driver;
@@ -34,32 +34,32 @@ public class User {
     private String password;
 
     @Column(name = "role")
-    private int role;
+    private String role;
 
     public User(){
 
     }
 
-    public User(Long id, String email, String password, Integer role){
+    public User(Long idUser, String email, String password, String role){
         super();
-        this.id = id;
+        this.idUser = idUser;
         this.email = email;
         this.password = password;
         this.role = role;
     }
 
     /**
-     * @return the id
+     * @return the idUser
      */
-    public Long getId() {
-        return id;
+    public Long getIdUser() {
+        return idUser;
     }
 
     /**
-     * @param id the id to set
+     * @param idUser the idUser to set
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
     }
 
     /**
@@ -135,15 +135,16 @@ public class User {
     /**
      * @return the role
      */
-    public int getRole() {
+    public String getRole() {
         return role;
     }
 
     /**
      * @param role the role to set
      */
-    public void setRole(int role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
+    
 }

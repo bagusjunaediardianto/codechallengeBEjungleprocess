@@ -15,7 +15,7 @@ public class Transaksi {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_transaksi")
-    private Long id;
+    private Long idTransaksi;
 
     @ManyToOne
     private Driver driver;
@@ -42,9 +42,9 @@ public class Transaksi {
 
     }
 
-    public Transaksi (Long id, String tglSewa, String tglKembali,Integer total, Integer denda, Driver driver, Mobil mobil, Penyewa penyewa){
+    public Transaksi (Long idTransaksi, String tglSewa, String tglKembali,Integer total, Integer denda, Driver driver, Mobil mobil, Penyewa penyewa){
         super();
-        this.id = id;
+        this.idTransaksi = idTransaksi;
         this.tglSewa = tglSewa;
         this.tglKembali = tglKembali;
         this.total = total;
@@ -55,17 +55,17 @@ public class Transaksi {
       }
 
     /**
-     * @return the id
+     * @return the idTransaksi
      */
-    public Long getId() {
-        return id;
+    public Long getIdTransaksi() {
+        return idTransaksi;
     }
 
     /**
-     * @param id the id to set
+     * @param idTransaksi the idTransaksi to set
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdTransaksi(Long idTransaksi) {
+        this.idTransaksi = idTransaksi;
     }
 
     /**

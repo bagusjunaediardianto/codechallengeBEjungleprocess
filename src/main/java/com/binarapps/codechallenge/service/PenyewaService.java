@@ -14,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class PenyewaService {
 
     @Autowired
-    private PenyewaRepository penyewaRepository;
+    PenyewaRepository penyewaRepository;
 
     public List<Penyewa> getAllPenyewa(Long idUser){
         List<Penyewa> penyewas = new ArrayList<>();

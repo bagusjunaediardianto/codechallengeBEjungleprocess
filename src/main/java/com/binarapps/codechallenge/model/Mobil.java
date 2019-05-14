@@ -16,7 +16,7 @@ public class Mobil {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id_mobil")
-    private Long id;
+    private Long idMobil;
 
     @ManyToOne
     private Rental rental;
@@ -37,36 +37,36 @@ public class Mobil {
     private String tahun;
 
     @Column(name = "harga")
-    private Integer harga;
+    private String harga;
 
     public Mobil() {
 
     }
 
-    public Mobil(Long id, String plat, String jenis, String merk, String nama, String tahun, int harga, Long idRental) {
+    public Mobil(Long idMobil, String plat, String jenis, String merk, String nama, String tahun, String harga, Rental rental) {
         super();
-        this.id = id;
+        this.idMobil = idMobil;
         this.plat = plat;
         this.jenis = jenis;
         this.merk = merk;
         this.nama = nama;
         this.tahun = tahun;
         this.harga = harga;
-        this.setRental(new Rental(idRental, "", "", "", ""));
+        this.rental = rental;
     }
 
     /**
-     * @return the id
+     * @return the idMobil
      */
-    public Long getId() {
-        return id;
+    public Long getIdMobil() {
+        return idMobil;
     }
 
     /**
-     * @param id the id to set
+     * @param idMobil the idMobil to set
      */
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdMobil(Long idMobil) {
+        this.idMobil = idMobil;
     }
 
     /**
@@ -156,17 +156,16 @@ public class Mobil {
     /**
      * @return the harga
      */
-    public int getHarga() {
+    public String getHarga() {
         return harga;
     }
 
     /**
      * @param harga the harga to set
      */
-    public void setHarga(int harga) {
+    public void setHarga(String harga) {
         this.harga = harga;
     }
 
     
-
 }

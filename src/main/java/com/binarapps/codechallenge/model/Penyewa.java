@@ -16,7 +16,7 @@ public class Penyewa {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name ="id_penyewa")
-    private Long id;
+    private Long idPenyewa;
 
     @OneToOne
     @MapsId
@@ -38,27 +38,42 @@ public class Penyewa {
 
     }
 
-    public Penyewa(Long id, String ktp, String nama, String alamat, String telepon) {
+    public Penyewa(Long idPenyewa, String ktp, String nama, String alamat, String telepon, User user) {
         super();
-        this.id = id;
+        this.idPenyewa = idPenyewa;
         this.ktp = ktp;
         this.nama = nama;
         this.alamat = alamat;
         this.telepon = telepon;
-    }
-    
-    /**
-     * @return the id
-     */
-    public Long getId() {
-        return id;
+        this.user = user;
     }
 
     /**
-     * @param id the id to set
+     * @return the idPenyewa
      */
-    public void setId(Long id) {
-        this.id = id;
+    public Long getIdPenyewa() {
+        return idPenyewa;
+    }
+
+    /**
+     * @param idPenyewa the idPenyewa to set
+     */
+    public void setIdPenyewa(Long idPenyewa) {
+        this.idPenyewa = idPenyewa;
+    }
+
+    /**
+     * @return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(User user) {
+        this.user = user;
     }
 
     /**
@@ -116,5 +131,4 @@ public class Penyewa {
     public void setTelepon(String telepon) {
         this.telepon = telepon;
     }
-
 }
